@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OBS Counter</title>
+<style>
+    body {
+        margin: 0;
+        background: transparent;
+        overflow: hidden;
+    }
+    #score {
+        font-size: 150px;
+        color: white;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<div id="score">0</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/overlay.js"></script>
+</body>
+</html>

@@ -6,6 +6,21 @@ const io = require('socket.io')(http);
 let score = 0;
 const ADMIN_PASS = "work"; // <- tukaj nastavi geslo
 
+// Root stran (info page)
+app.get('/', (req, res) => {
+    res.send(`
+        <html>
+        <head><title>OBS Counter Service</title></head>
+        <body style="font-family: Arial; text-align: center; padding: 50px;">
+            <h1>✅ OBS Counter Service is running!</h1>
+            <p>Overlay (for OBS): <a href="/overlay">/overlay</a></p>
+            <p>Admin panel: <a href="/admin">/admin</a> (or /admin?pass=GESLO če imaš zaščito)</p>
+        </body>
+        </html>
+    `);
+});
+
+
 // Serve static files
 app.use(express.static('public'));
 

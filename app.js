@@ -29,14 +29,11 @@ app.get('/overlay', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-// Admin panel (zaščiten z geslom)
+// Admin panel (brez gesla - za test)
 app.get('/admin', (req, res) => {
-    const pass = req.query.pass;
-    if (pass !== ADMIN_PASS) {
-        return res.status(401).send('Unauthorized');
-    }
     res.sendFile(__dirname + '/public/admin.html');
 });
+
 
 // Socket.IO
 io.on('connection', (socket) => {
